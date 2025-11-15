@@ -2,9 +2,9 @@ name: Run Oxygen Tests
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ "main" ]
 
 jobs:
   test:
@@ -26,7 +26,7 @@ jobs:
 
       - name: Install Playwright browsers
         run: |
-          playwright install chromium
+          playwright install --with-deps chromium
 
       - name: Run tests
         run: |
